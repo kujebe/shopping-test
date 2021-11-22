@@ -12,16 +12,20 @@ export default {
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet', href: '//fonts.googleapis.com/css?family=Roboto:400,500,700,400italic|Material+Icons'}
     ]
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
+    { src: 'vue-material/dist/vue-material.min.css', lang:'css' },
+    { src: './assets/theme.scss', lang:'scss' }
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    "./plugins/vue-material.ts"
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -54,5 +58,9 @@ export default {
   },
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-  }
+    transpile: [
+      "lodash-es",
+      "lodash-es/groupBy"
+    ]
+  },
 }

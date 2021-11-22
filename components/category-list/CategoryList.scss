@@ -1,0 +1,24 @@
+.category-list {
+  height: 70px;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  border-bottom: 1px solid #1e2024;
+  border-top: 1px solid #1e2024;
+  justify-content: space-between;
+
+  &__filter-container {
+    display: flex;
+    align-items: center;
+  }
+
+  &__search {
+    .md-field {
+      margin-bottom: 0;
+    }
+  }
+
+  &__filter-label {
+    margin-right: 30px;
+  }
+}

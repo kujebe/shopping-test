@@ -1,9 +1,16 @@
 import Vue from "vue";
 import { mapState } from "vuex";
 
-import { ShopService } from "@/services/ShopService";
+import { IProduct, ShopService } from "@/services/ShopService";
+
+const AppBar = () => import(
+  "@/components/app-bar/AppBar"
+);
 
 export default Vue.extend({
+  components: {
+    AppBar
+  },
   asyncData({ $config, store, error }) {
     return ShopService.getProducts($config)
       .toPromise()
@@ -16,10 +23,29 @@ export default Vue.extend({
   },
   data() {
     return {
-      title: "Notch shop"
+      filterFlag: false,
+      showSnackbar: false
     }
   },
   computed: {
-    ...mapState("Products", ["products"])
+    computedProducts(): IProduct[] {
+      return this.filterFlag ? this.filteredProducts : this.products;
+    },
+    ...mapState("Products", ["products", "filteredProducts"])
+  },
+  created() {
+    this.$root.$on("filter-products", () => { this.filterFlag = true })
+    this.$root.$on("clear-product-filter", () => { this.filterFlag = false })
+  },
+  methods: {
+    addItemToCart(product: IProduct): void {
+      const cartItem = {
+        id: product.id,
+        name: product.name,
+        price: product.price
+      };
+      this.$store.dispatch("Cart/addToCart", cartItem);
+      this.showSnackbar = true;
+    }
   }
 })

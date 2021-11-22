@@ -1,0 +1,43 @@
+.app-bar {
+  width: 100%;
+
+  &.md-whiteframe {
+    z-index: 4
+  }
+  .md-toolbar {
+    height: 56px;
+
+    .md-toolbar-container {
+      height: 56px;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  &__menu{
+    display: flex;
+    a {
+      margin: 0 5px;
+      font-size: 16px;
+      font-weight: 400;
+      color: #5e5e5e;
+    }
+  }
+
+  &__logo {
+    color: #E9130E;
+    font-size: 30px;
+    font-weight: 600;
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+
+    &--profile {
+      margin-left: 15px;
+    }
+  }
+}

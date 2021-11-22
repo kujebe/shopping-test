@@ -23,6 +23,19 @@ class Service {
       .pipe(map((response) => response.data))
   }
 
+  public getFilteredProducts(q?: string): Observable<IProduct[]> {
+    const url = `${baseURL}/products?category=${q}`;
+
+    return ServerApiService.get(url)
+      .pipe(map((response) => response.data))
+  }
+
+  public searchProducts(q?: string): Observable<IProduct[]> {
+    const url = `${baseURL}/products?q=${q}`;
+
+    return ServerApiService.get(url)
+      .pipe(map((response) => response.data))
+  }
 }
 
 export const ShopService = new Service();

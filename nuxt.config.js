@@ -36,8 +36,22 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    "@nuxtjs/axios",
+    "@nuxtjs/proxy",
   ],
-
+  axios: {
+    baseURL: "http://localhost:3000",
+    proxy: true,
+    credentials: false
+  },
+  proxy: {
+    '/api/shop': { target: process.env.API_URL || "http://localhost:3001", pathRewrite: {'^/api/shop/': ''} },
+    '/api/cart': { target: process.env.API_URL || "http://localhost:3001", pathRewrite: {'^/api/cart/': ''} },
+    '/api/user': { target: process.env.API_URL || "http://localhost:3001", pathRewrite: {'^/api/user/': ''} },
+  },
+  publicRuntimeConfig: {
+    shopUrl: process.env.VUE_APP_SHOP_URL || "http://localhost:3000",
+  },
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
   }

@@ -12,5 +12,5 @@
   }
 </router>
 
-<script src="./Home.ts" lang="ts"/>
-<style src="./Home.scss" lang="scss" scoped/>
+<script src="./Shop.ts" lang="ts"/>
+<style src="./Shop.scss" lang="scss" scoped/>

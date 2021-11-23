@@ -1,0 +1,31 @@
+.checkout {
+  &__avatar {
+    width: 40px;
+  }
+
+  &__price {
+    font-weight: bold;
+  }
+
+  &__summary {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 20px;
+
+    &--price {
+      margin-right: 10px;
+    }
+  }
+
+  &__button {
+    float: right;
+    margin-right: 40px;
+  }
+  &__quantity-wrapper {
+    .md-table-cell-container {
+      display: flex !important;
+      align-items: center !important;
+    }
+  }
+}

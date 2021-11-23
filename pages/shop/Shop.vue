@@ -1,6 +1,6 @@
 <template>
   <div>
-    <app-bar />
+    <app-bar show-categories />
     <section>
       <md-content class="md-layout md-gutter shop__product-list">
         <ul

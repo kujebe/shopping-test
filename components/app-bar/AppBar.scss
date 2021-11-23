@@ -23,6 +23,7 @@
       font-size: 16px;
       font-weight: 400;
       color: #5e5e5e;
+      cursor: pointer;
     }
   }
 
@@ -39,5 +40,9 @@
     &--profile {
       margin-left: 15px;
     }
+  }
+
+  &__login-link {
+    cursor: pointer;
   }
 }

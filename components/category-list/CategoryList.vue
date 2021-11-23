@@ -28,7 +28,6 @@
           ref="productSearchField"
           v-model="searchModel"
           @keyup.native="searchProducts"
-           @blur.native="clearSearch"
           ></md-input>
       </md-field>
     </div>

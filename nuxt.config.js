@@ -60,7 +60,9 @@ export default {
   build: {
     transpile: [
       "lodash-es",
-      "lodash-es/groupBy"
+      "lodash-es/groupBy",
+      "lodash-es/clone",
+      "lodash-es/cloneDeep"
     ]
   },
 }

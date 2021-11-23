@@ -29,7 +29,7 @@ export default Vue.extend({
     },
     searchProducts(): void {
       const query = ((this.$refs.productSearchField as any).$el.value);
-      if(query.length >= 3) {
+      if (query.length >= 3) {
         ShopService.searchProducts(query).subscribe(
           (data) => {
             this.$store.dispatch("Products/setFilteredProducts", data);
@@ -44,15 +44,6 @@ export default Vue.extend({
           }
         );
       }
-    },
-    clearSearch(): void {
-      // this.searchModel = "";
-      // ShopService.getProducts().subscribe(
-      //   (data) => {
-      //     this.$store.dispatch("Products/setProducts", data);
-      //     this.$root.$emit("clear-product-filter");
-      //   }
-      // );
     }
   }
 })

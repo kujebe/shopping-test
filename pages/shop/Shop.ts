@@ -41,8 +41,11 @@ export default Vue.extend({
     addItemToCart(product: IProduct): void {
       const cartItem = {
         id: product.id,
+        sku: product.sku,
         name: product.name,
-        price: product.price
+        price: product.price,
+        quantity: 1,
+        image: product.image
       };
       this.$store.dispatch("Cart/addToCart", cartItem);
       this.showSnackbar = true;
